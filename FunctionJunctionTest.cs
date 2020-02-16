@@ -6,6 +6,7 @@ namespace FunctionJunctionDotNet
 {
   public class FunctionJunctionTest
   {
+
     [Theory]
     [InlineData(1, 3, 3)]
     [InlineData(0, 3, 3)]
@@ -16,7 +17,8 @@ namespace FunctionJunctionDotNet
       Assert.Equal(max, FunctionJunction.Max(a, b));
     }
 
-    [Theory]
+
+    [Theory(Skip = "Remove to run test")]
     [InlineData(1, 3, 2, 3)]
     [InlineData(0, 3, -1, 3)]
     [InlineData(10, 3, 50, 50)]
@@ -27,7 +29,8 @@ namespace FunctionJunctionDotNet
       Assert.Equal(max, FunctionJunction.MaxOfThree(a, b, c));
     }
 
-    [Theory]
+
+    [Theory(Skip = "Remove to run test")]
     [InlineData(8, 11, 19)]
     [InlineData(4, 100, 104)]
     public void Sum(int a, int b, int sum)
@@ -36,7 +39,8 @@ namespace FunctionJunctionDotNet
     }
 
 
-    [Theory]
+
+    [Theory(Skip = "Remove to run test")]
     [InlineData(new int[] { 8, 11 }, 19)]
     [InlineData(new int[] { 4, 100 }, 104)]
     public void SumList(int[] numbers, int sum)
@@ -44,7 +48,8 @@ namespace FunctionJunctionDotNet
       Assert.Equal(sum, FunctionJunction.SumList(numbers.ToList()));
     }
 
-    [Theory]
+
+    [Theory(Skip = "Remove to run test")]
     [InlineData('B', false)]
     [InlineData('b', false)]
     [InlineData('t', false)]
@@ -55,7 +60,8 @@ namespace FunctionJunctionDotNet
       Assert.Equal(result, FunctionJunction.IsVowel(ch));
     }
 
-    [Theory]
+
+    [Theory(Skip = "Remove to run test")]
     [InlineData("a", "a")]
     [InlineData("b", "bob")]
     [InlineData("cat", "cocatot")]
@@ -65,7 +71,8 @@ namespace FunctionJunctionDotNet
       Assert.Equal(result, FunctionJunction.Rovarspraket(test));
     }
 
-    [Theory]
+
+    [Theory(Skip = "Remove to run test")]
     [InlineData("a", "a")]
     [InlineData("books", "skoob")]
     [InlineData("we don't want no trouble", "elbuort on tnaw t'nod ew")]
@@ -75,7 +82,7 @@ namespace FunctionJunctionDotNet
       Assert.Equal(result, FunctionJunction.Reverse(test));
     }
 
-    [Theory]
+    [Theory(Skip = "Remove to run test")]
     [InlineData("book dogs", "book")]
     [InlineData("life the universe and everything", "everything")]
     public void FindLongestWord(string test, string result)
