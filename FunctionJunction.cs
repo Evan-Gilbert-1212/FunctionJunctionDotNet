@@ -6,11 +6,26 @@ namespace FunctionJunctionDotNet
 {
   public static class FunctionJunction
   {
+    internal static bool IsVowel(char ch)
+    {
+      return "AEIOUaeiou".Contains(ch);
+    }
+
+    internal static string Rovarspraket(string test)
+    {
+      return String.Join(String.Empty, test.Select(s => IsVowel(s) ? s.ToString() : $"{s}o{s}"));
+    }
+
+    internal static string Reverse(string test)
+    {
+      return String.Join(String.Empty, test.Reverse());
+    }
+
     /**
-     * 1) Define a function max() that takes two numbers as arguments
-     * and returns the largest of them. Use the if-then-else
-     * construct available in Javascript.
-     */
+* 1) Define a function max() that takes two numbers as arguments
+* and returns the largest of them. Use the if-then-else
+* construct available in Javascript.
+*/
 
     // ...
 
@@ -76,6 +91,11 @@ namespace FunctionJunctionDotNet
     internal static int MaxOfThree(int a, int b, int c)
     {
       return Max(a, b) == a ? Max(a, c) : Max(b, c);
+    }
+
+    internal static IEnumerable<char> FindLongestWord(string test)
+    {
+      return test.Split(' ').OrderByDescending(o => o.Length).First();
     }
 
     internal static int Sum(int a, int b)
